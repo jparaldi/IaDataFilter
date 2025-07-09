@@ -1,0 +1,9 @@
+vamo falando oq cada um fez aqui pro outro ir fazendo.
+
+-isso pode nao ser profissional mas fds
+
+primeiro faz uma venv ai pra vc baixar os bgl
+
+depois roda isso aq: " pip install "crawl4ai @ git+https://github.com/unclecode/crawl4ai.git" transformers torch nltk  "
+
+mano tem q pegar chave api, esse bgl n é pago? 
