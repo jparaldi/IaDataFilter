@@ -1,12 +1,9 @@
-from crawl4ai import WebCrawler
+import asyncio
+from crawl4ai import AsyncWebCrawler
 
-#criar uma instância pro webCrawler
-crawler = WebCawler()
+async def main():
+    async with AsyncWebCrawler() as crawler:
+        result = await crawler.arun("https://dados.gov.br/dados/conjuntos-dados")
+        print(result.markdown)
 
-crawler.warmup()
-
-#rodar o crawler numa url
-result = crawler.run(url="https://dados.gov.br/dados/conjuntos-dados")
-
-#printar os resultados
-print(result.markdown)
+asyncio.run(main())
