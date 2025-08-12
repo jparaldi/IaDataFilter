@@ -2,6 +2,8 @@
 
 Este projeto utiliza o framework **Crawl4AI** em conjunto com a **API da Groq** para automatizar a auditoria e a avaliação da qualidade de portais de dados abertos. Ele verifica 13 critérios de qualidade com o apoio de inteligência artificial e gera um veredito final sobre a consistência dos dados, armazenando os resultados em um banco de dados local.
 
+Feito por: Juan Junqueira e João Araldi
+
 ---
 
 ### Funcionalidades
@@ -51,6 +53,8 @@ Siga estes passos para configurar e executar o projeto:
 ---
 
 ### Como Usar
+
+Substitua no código a URL que você deseja investigar.
 
 Para iniciar a auditoria, execute o seguinte comando no terminal com o ambiente virtual ativado:
 
