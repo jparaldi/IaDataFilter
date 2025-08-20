@@ -1,6 +1,7 @@
 /.c4ia
+/.venv
 banco.ipynb
-/dataBank
+/database
 .env
 __pycache__/
 *.sqlite3
