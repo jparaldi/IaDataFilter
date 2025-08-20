@@ -4,7 +4,7 @@ Este projeto utiliza o framework **Crawl4AI** em conjunto com a **API da Groq** 
 
 Além disso, inclui o script **`jsongenerator.py`**, que permite extrair de qualquer página de dados abertos um **JSON estruturado** com informações essenciais do dataset, como formatos de arquivo, URLs de download, licença, versão, título, descrição, contatos e organização responsável. Esse script serve como um gerador automático de metadados a partir de páginas web.
 
-Feito por: Juan Junqueira e João Araldi
+Feito por: João Araldi e Juan Junqueira
 ---
 
 ### Funcionalidades
