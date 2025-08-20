@@ -25,7 +25,7 @@ Siga estes passos para configurar e executar o projeto:
 1.  **Clone o repositório:**
     ```bash
     git clone https://github.com/jparaldi/IaDataFilter.git
-    cd IA4noCKAN
+    cd IaDataFilter
     ```
 
 2.  **Crie e ative um ambiente virtual:**
