@@ -89,7 +89,7 @@ async def main():
     # URL ALVO:
 
     url_alvo = TARGET_URL
-    print(f"🚀 Iniciando pipeline ROBUSTO com processamento em lotes para: {url_alvo}")
+    print(f"Iniciando pipeline ROBUSTO com processamento em lotes para: {url_alvo}")
 
     try:
         # --- ETAPA 1: COLETA DE EVIDÊNCIAS ---
@@ -152,7 +152,7 @@ async def main():
 
         # Verifica se algum pacote foi processado com sucesso
         if not partial_results:
-            print("\n❌ Nenhum pacote de evidências pôde ser processado. Análise abortada.")
+            print("\nNenhum pacote de evidências pôde ser processado. Análise abortada.")
             return
 
         # Junção dos resultados dos 13 critérios
@@ -168,7 +168,7 @@ async def main():
             if reason_set:
                 setattr(evidence_analysis, field, " | ".join(sorted(list(reason_set))))
 
-        print("✅ Coleta de evidências concluída.")
+        print("Coleta de evidências concluída.")
 
         # ETAPA 2: JULGAMENTO FINAL 
         print("\n--- Etapa 2: Solicitando julgamento final do 'Auditor Sênior'... ---")
@@ -204,20 +204,20 @@ async def main():
             if not field.endswith("_reasoning"):
                 value = getattr(evidence_analysis, field)
                 reasoning = getattr(evidence_analysis, f"{field}_reasoning")
-                status = "✅ SIM" if value else "❌ NÃO"
+                status = "SIM" if value else "NÃO"
                 tokens_encontrados = sorted(list(found_tokens_map.get(field, [])))
                 print(f"\n- {field.replace('_', ' ').capitalize()}: {status}")
                 if tokens_encontrados:
                     print(f"  Tokens Encontrados (Filtro): {tokens_encontrados}")
                 print(f"  Evidência (IA): {reasoning if reasoning else 'Nenhuma evidência direta encontrada.'}")
         print("\n--- VEREDITO FINAL (AUDITOR SÊNIOR) ---")
-        status = "🚨 SIM, RISCO DE FALSO POSITIVO" if final_judgement.possible_false_positive else "✅ NÃO, PORTAL CONSISTENTE"
+        status = "SIM, RISCO DE FALSO POSITIVO" if final_judgement.possible_false_positive else "NÃO, PORTAL CONSISTENTE"
         print(f"\n- Possible false positive: {status}")
         print(f"  Justificativa do Auditor: {final_judgement.possible_false_positive_reasoning}")
         insert_results_into_db(url_alvo, evidence_analysis, final_judgement, found_tokens_map)
 
     except Exception as e:
-        print(f"🚨 Erro inesperado durante a execução: {e}")
+        print(f"Erro inesperado durante a execução: {e}")
 
     
 def insert_results_into_db(url, evidence_analysis: EvidenceCollection, final_judgement: FalsePositiveJudgement, found_tokens_map: dict):
@@ -296,13 +296,13 @@ def insert_results_into_db(url, evidence_analysis: EvidenceCollection, final_jud
         print(f"✅ Resultados armazenados no banco local com site_id = {site_id}")
 
     except Exception as e:
-        print(f"🚨 ERRO ao inserir no banco de dados local: {e}")
+        print(f"ERRO ao inserir no banco de dados local: {e}")
     finally:
         if cursor:
             cursor.close()
         if conn:
             conn.close()
-        print("🔒 Conexão com o banco de dados fechada.")
+        print("Conexão com o banco de dados fechada.")
 
 # Executa a função principal
 if __name__ == "__main__":

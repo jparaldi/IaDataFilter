@@ -24,13 +24,13 @@ Siga estes passos para configurar e executar o projeto:
 
 1.  **Clone o repositório:**
     ```bash
-    git clone https://github.com/jparaldi/IA4noCKAN.git
+    git clone https://github.com/jparaldi/IaDataFilter.git
     cd IA4noCKAN
     ```
 
 2.  **Crie e ative um ambiente virtual:**
     ```bash
-    python3 -m venv .venv
+    python -m venv .venv
     source .venv/bin/activate
     ```
 
